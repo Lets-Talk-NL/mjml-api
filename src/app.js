@@ -20,7 +20,7 @@ function init(app) {
   app.use(json());
 
   app.post('/', (req, res) => {
-    res.send(mjml2html(req.body.mjml));
+    res.send(mjml2html(req.body.mjml, req.body.options || {}));
   });
 }
 
